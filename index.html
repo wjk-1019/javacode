@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>多模态检索系统</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Video.js CSS -->
+    <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/main.tsx"></script>
+    
+    <!-- Video.js 核心库 -->
+    <script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
+    
+    <!-- OGV.js 用于支持更多格式 (可选，用于 Ogg/Theora/WebM VP8 等) -->
+    <script src="https://cdn.jsdelivr.net/npm/ogv@1.9.0/dist/ogv.js"></script>
+    
+    <!-- videojs-ogvjs 桥接插件 (可选) -->
+    <script>
+      // 确保 videojs 全局可用
+      window.addEventListener('load', function() {
+        if (typeof videojs !== 'undefined') {
+          console.log('Video.js loaded:', videojs.VERSION);
+        }
+        if (typeof OGVLoader !== 'undefined') {
+          OGVLoader.base = 'https://cdn.jsdelivr.net/npm/ogv@1.9.0/dist/';
+          console.log('OGV.js loaded');
+        }
+      });
+    </script>
+  </body>
+</html>
